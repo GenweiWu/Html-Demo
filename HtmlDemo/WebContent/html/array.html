@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>array Demo</title>
+</head>
+<script type="text/javascript">
+'use strict';
+
+//testArray();
+//testArrar2();
+testArray3();
+
+//sort reverse方法会修改数组本身
+function testArray3(){
+	debugger;
+	var array= [1,5,4];
+	array.sort();
+	array.reverse();
+}
+
+//push返回新的数组大小；
+//pop返回最上面的值，数组为空时返回undefined，值为undefined时也是undefined的
+function testArrar2(){
+	debugger;
+	var array = [];
+	var i = array.pop();
+	var l = array.push("a","b","c","d");
+	i = array.pop();
+
+	array.length = 5;
+	var j= array.pop();
+}
+
+//slice复制出的是新的对象数组
+function testArray(){
+	debugger;
+	var array = [1,2,3];
+
+	var newArray = array.slice();
+	array[2]="tt";
+
+	//newArray = [1, 2, 3], array = [1, 2, "tt"]
+}
+
+</script>
+<body>
+	
+</body>
+</html>

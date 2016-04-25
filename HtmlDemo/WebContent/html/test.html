@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script type="text/javascript">
+'use strict'
+
+//undefined
+test();
+var a=0;
+test(a);
+a='';
+test(a);
+a="";
+test(a);
+a=false;
+test(a);
+a=null;
+test(a);
+
+function test(param){
+	//test01(param);
+	//test02(param);
+	test03(param);
+}
+
+function test03(param){
+	if(param == null){
+		console.log("----------"+param);
+	}
+	else{
+		console.log(">>>>>>>>>>"+param);
+	}
+}
+
+function test02(param){
+	if(typeof param === "undefined"){
+		console.log("----------"+param);
+	}
+	else{
+		console.log(">>>>>>>>>>"+param);
+	}
+}
+
+function test01(param){
+	if(!param){
+		console.log("----------"+param);
+	}
+	else{
+		console.log(">>>>>>>>>>"+param);
+	}
+}
+
+
+</script>	
+</head>
+<body>
+	
+</body>
+</html>
