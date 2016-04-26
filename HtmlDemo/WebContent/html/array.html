@@ -9,7 +9,19 @@
 
 //testArray();
 //testArrar2();
-testArray3();
+//testArray3();
+
+testArray4();
+
+//concat()方法可以接收任意个元素和Array，并且自动把Array拆开，然后全部添加到新的Array里
+function testArray4(){
+	debugger;
+	var a= [];
+	//注意，上面所说的自动拆开，是这样的
+	var b1 = a.concat(1,2,["a","b"]);
+	var b2 = a.concat([1,2,["a","b"]]);
+
+}
 
 //sort reverse方法会修改数组本身
 function testArray3(){
