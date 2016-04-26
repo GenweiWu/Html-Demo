@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script type="text/javascript">
+'use strict';	
+
+//testObj01();
+//testObj02();
+testObj03();
+
+function testObj03(){
+	var obj = {
+		name:"zhangsan",
+		"mid-school":"No 1 school"
+	}
+	debugger;
+	for(var key in obj){
+		console.log(key);
+		console.log(obj.key);
+		console.log(obj[key]);
+	}
+}
+
+function testObj02(){
+	var person={
+		name:"zhangsan"
+	}
+	'name' in person;
+	'toString' in person;
+	person.hasOwnProperty("name");
+	person.hasOwnProperty("toString");
+}
+
+//属性包含特殊字符，则要使用""包含
+//可以通过 obj.name 或obj['name']访问；但是属性包含特殊字符，则只能通过obj['mid-school']访问
+function testObj01(){
+	var person={
+		name:"zhangsan",
+		'age':24,
+		"mid-school":"No 1 school"
+	}
+	debugger;
+	var name = person.name;
+	name = person['name'];
+	var age = person.age;
+	age = person['age'];
+	//person.mid-school;
+	var s= person["mid-school"]
+}
+	
+</script>	
+</head>
+<body>
+	
+</body>
+</html>
