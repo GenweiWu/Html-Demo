@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>
+		<input type="text" id="name" value="111">
+	</div>
+
+
+</body>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>	
+<script type="text/javascript">
+'use strict';	
+$(function(){
+
+	test01();
+});
+
+	
+//对input元素，应该使用jquery(#input).val("aaa")方法，而不是jquery(#input).text("aaa")方法
+function test01(){
+	debugger;
+	var a = $("#name").text();
+	var b = $("#name").val();
+	//console.log("a:"+a+" ,b:"+b);
+	
+	$("#name").text("222");
+	$("#name").val("333");
+}
+</script>	
+</html>
