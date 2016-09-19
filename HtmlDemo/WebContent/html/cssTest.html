@@ -15,6 +15,7 @@ $(function(){
 });	
 
 function test02(){
+	// 使用setTimeout的方式，可以避免下面的样式设置阻塞的问题。
 	$("#test").css("background-color","red");
 	console.log("111");
 
@@ -27,6 +28,7 @@ function test02(){
 
 
 function test01(){
+	//此处设置的样式，不会立即生效；需要等到下面的3s执行结束，才能生效。
 	$("#test").css("background-color","red");
 	console.log("111");
 
