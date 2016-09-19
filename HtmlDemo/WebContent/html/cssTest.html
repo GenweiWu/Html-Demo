@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript">
+'use strict';	
+
+	
+$(function(){
+	// debugger;
+	// test01();
+	test02();
+});	
+
+function test02(){
+	$("#test").css("background-color","red");
+	console.log("111");
+
+	setTimeout(function(){
+		sleep(3000);
+		console.log("222");
+	}, 100);
+	
+}
+
+
+function test01(){
+	$("#test").css("background-color","red");
+	console.log("111");
+
+	sleep(3000);
+	console.log("222");
+}
+
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+</script>	
+</head>
+<body>
+	
+<div id="test" style="background-color:green">Hello World!</div>
+
+</body>
+</html>
