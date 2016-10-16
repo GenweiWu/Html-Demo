@@ -15,29 +15,49 @@
             margin: 20px;
         }
 
-        #test, #test2 {
+        input.btn {
             margin: 15px;
+        }
+        .brother{
+            height: 40px;
         }
     </style>
     <link rel="stylesheet" type="text/css" href="../3rd/bootstrap/bootstrap-3.3.7-dist/css/bootstrap.css">
 </head>
 <body style="margin: 10px;">
 
-<div class="outer">
-    outer
-    <div class="inner">
-        inner
+<div id="testDiv1">
+    <div class="outer">
+        outer
+        <div class="inner">
+            inner
+        </div>
+    </div>
+    <div>
+        <input id="test1" class="btn btn-default" type="button" value="开始测试trigger">
+        <input id="test2" class="btn btn-default" type="button" value="开始测试triggerHandler">
+
+        <ul style="margin: 15px;font-size: 16px;border: 1px solid green;">
+            <li>triggerHandler() 方法触发被选元素的指定事件类型。但不会执行浏览器默认动作，也不会产生事件冒泡。</li>
+        </ul>
     </div>
 </div>
-<div>
-    <input id="test" class="btn btn-default" type="button" value="开始测试trigger">
-    <input id="test2" class="btn btn-default" type="button" value="开始测试triggerHandler">
 
-    <ul style="margin: 15px;font-size: 16px;border: 1px solid green;">
-        <li>triggerHandler() 方法触发被选元素的指定事件类型。但不会执行浏览器默认动作，也不会产生事件冒泡。</li>
-        <li>triggerHandler() 方法与 trigger() 方法类似。不同的是它不会触发事件（比如表单提交）的默认行为，而且只影响第一个匹配元素。</li>
-    </ul>
+<div id="testDiv2">
+    <div class="brother" style="background-color: yellow;">
+        div111
+    </div>
+    <div class="brother" style="background-color: blue;">
+        div222
+    </div>
+    <div>
+        <input id="test3" class="btn btn-default" type="button" value="开始测试trigger">
+        <input id="test4" class="btn btn-default" type="button" value="开始测试triggerHandler">
 
+        <ul style="margin: 15px;font-size: 16px;border: 1px solid green;">
+            <li>triggerHandler() 方法与 trigger() 方法类似。不同的是它不会触发事件（比如表单提交）的默认行为，而且只影响第一个匹配元素。</li>
+        </ul>
+    </div>
 </div>
 
 </body>
@@ -54,11 +74,22 @@
             $(this).append("inner ");
         });
 
-        $("#test").click(function () {
+        $("#test1").click(function () {
             $(".inner").trigger("click");
         });
         $("#test2").click(function () {
             $(".inner").triggerHandler("click");
+        });
+
+
+        $(".brother").click(function () {
+            $(this).append("brother ");
+        });
+        $("#test3").click(function () {
+            $(".brother").trigger("click");
+        });
+        $("#test4").click(function () {
+            $(".brother").triggerHandler("click");
         });
 
 
