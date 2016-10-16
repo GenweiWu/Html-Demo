@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .outer {
+            background-color: yellow;
+            height: 200px;
+        }
+
+        .inner {
+            background-color: orange;
+            height: 50%;
+            margin: 20px;
+        }
+
+        #test, #test2 {
+            margin: 15px;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="../3rd/bootstrap/bootstrap-3.3.7-dist/css/bootstrap.css">
+</head>
+<body style="margin: 10px;">
+
+<div class="outer">
+    outer
+    <div class="inner">
+        inner
+    </div>
+</div>
+<div>
+    <input id="test" class="btn btn-default" type="button" value="开始测试trigger">
+    <input id="test2" class="btn btn-default" type="button" value="开始测试triggerHandler">
+
+    <ul style="margin: 15px;font-size: 16px;border: 1px solid green;">
+        <li>triggerHandler() 方法触发被选元素的指定事件类型。但不会执行浏览器默认动作，也不会产生事件冒泡。</li>
+        <li>triggerHandler() 方法与 trigger() 方法类似。不同的是它不会触发事件（比如表单提交）的默认行为，而且只影响第一个匹配元素。</li>
+    </ul>
+
+</div>
+
+</body>
+<script src="../3rd/jQuery/jquery-1.11.1.js"></script>
+<script src="../3rd/bootstrap/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script type="text/javascript">
+    'use strict';
+
+    $(function () {
+        $(".outer").click(function () {
+            $(this).append("outer ");
+        });
+        $(".inner").click(function () {
+            $(this).append("inner ");
+        });
+
+        $("#test").click(function () {
+            $(".inner").trigger("click");
+        });
+        $("#test2").click(function () {
+            $(".inner").triggerHandler("click");
+        });
+
+
+    });
+</script>
+</html>
